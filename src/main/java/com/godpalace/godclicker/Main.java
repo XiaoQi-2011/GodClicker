@@ -4,11 +4,13 @@ import com.github.kwhat.jnativehook.GlobalScreen;
 import com.godpalace.godclicker.clicker.Clicker;
 import com.godpalace.godclicker.clicker.LeftClicker;
 import com.godpalace.godclicker.clicker.RightClicker;
+import com.godpalace.godclicker.paint.Painting;
 
 public class Main {
     public static ClientUI clientUI;
     public static LeftClicker leftClicker;
     public static RightClicker rightClicker;
+    public static Painting painting;
 
     public static Clicker getClicker(Mouse mouse) {
         if (mouse == Mouse.LEFT) {

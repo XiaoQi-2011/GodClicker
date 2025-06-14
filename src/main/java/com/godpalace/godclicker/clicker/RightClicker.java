@@ -7,11 +7,13 @@ import com.github.kwhat.jnativehook.mouse.NativeMouseEvent;
 import com.github.kwhat.jnativehook.mouse.NativeMouseListener;
 import com.godpalace.godclicker.ClientUI;
 import com.godpalace.godclicker.Mouse;
+import com.godpalace.godclicker.UiSetting;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
+import java.util.Random;
 
 public class RightClicker implements Clicker{
 
@@ -23,7 +25,11 @@ public class RightClicker implements Clicker{
 
     @Setter
     @Getter
-    private int cps = 10;
+    private int MaxCps = 15;
+
+    @Setter
+    @Getter
+    private int MinCps = 10;
 
     @Setter
     @Getter
@@ -37,6 +43,7 @@ public class RightClicker implements Clicker{
                 robot.mouseRelease(InputEvent.BUTTON3_MASK);
             }
             try {
+                int cps = new Random().nextInt(MinCps, MaxCps + 1);
                 Thread.sleep(1000 / cps);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -66,7 +73,7 @@ public class RightClicker implements Clicker{
 
     public RightClicker() throws AWTException {
         robot = new Robot();
-        robot.setAutoDelay(10);
+        robot.setAutoDelay(UiSetting.PressTime);
         thread.start();
         NativeKeyListener keyListener = new NativeKeyListener() {
             @Override
