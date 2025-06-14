@@ -1,6 +1,10 @@
 package com.godpalace.godclicker.paint;
 
+import com.godpalace.gamegl.desktop.DesktopGraphics;
+import com.godpalace.godclicker.Main;
 import lombok.Getter;
+
+import java.awt.*;
 
 public class Painting {
     @Getter
@@ -11,9 +15,15 @@ public class Painting {
     Thread thread = new Thread(() -> {
         while (true) {
             if (isPainting) {
-                graphics.drawText("LeftClicker", x, y);
-                graphics.drawText("RightClicker", x, y + graphics.getSize() * 2);
+                graphics.drawText("LeftClicker   ", x, y);
+                graphics.drawText("RightClicker", x, y + 16);
 
+                graphics.setColor(Main.leftClicker.isStarted() ? Color.GREEN : Color.RED);
+                graphics.fillRect(x + 79, y, 16, 16);
+
+                graphics.setColor(Main.rightClicker.isStarted() ? Color.GREEN : Color.RED);
+                graphics.fillRect(x + 78, y + 16, 16, 16);
+            } else {
                 graphics.flush();
             }
         }

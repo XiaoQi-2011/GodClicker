@@ -30,6 +30,11 @@ public class Main {
         leftClicker = new LeftClicker();
         rightClicker = new RightClicker();
 
+        painting = new Painting();
+        painting.startPainting();
+
+        UiSetting.Init();
+
         clientUI = new ClientUI();
         clientUI.setVisible(true);
     }

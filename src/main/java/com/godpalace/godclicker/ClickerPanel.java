@@ -10,10 +10,10 @@ import java.awt.event.KeyEvent;
 @Getter
 public class ClickerPanel extends JPanel {
 
-    private int maxCps = 15;
-    private int minCps = 10;
-    private String bind = "";
-    private boolean isOn = false;
+    private int maxCps;
+    private int minCps;
+    private String bind;
+    private boolean isOn;
     private final Mouse mouse;
 
     private final JButton button;
@@ -21,6 +21,12 @@ public class ClickerPanel extends JPanel {
 
     public ClickerPanel(String text, Mouse mouse) {
         this.mouse = mouse;
+
+        maxCps = Main.getClicker(mouse).getMaxCps();
+        minCps = Main.getClicker(mouse).getMinCps();
+        bind = Main.getClicker(mouse).getBind();
+        isOn = Main.getClicker(mouse).isStarted();
+
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBackground(Color.WHITE);
         setSize(150, 100);
@@ -68,7 +74,7 @@ public class ClickerPanel extends JPanel {
         add(panel);
 
         //add listener
-        button.addActionListener(_ -> {
+        button.addActionListener(e -> {
             if (isOn) {
                 setOn(false);
                 Main.getClicker(mouse).stop();
@@ -79,8 +85,7 @@ public class ClickerPanel extends JPanel {
 
         });
 
-        clickSpinner1.addChangeListener(_ -> {
-            System.out.println("maxCps change");
+        clickSpinner1.addChangeListener(e -> {
             maxCps = (int) clickSpinner1.getValue();
             if (maxCps < minCps) {
                 maxCps = minCps;
@@ -89,8 +94,7 @@ public class ClickerPanel extends JPanel {
             Main.getClicker(mouse).setMaxCps(maxCps);
         });
 
-        clickSpinner2.addChangeListener(_ -> {
-            System.out.println("minCps change");
+        clickSpinner2.addChangeListener(e -> {
             minCps = (int) clickSpinner2.getValue();
             if (minCps > maxCps) {
                 minCps = maxCps;

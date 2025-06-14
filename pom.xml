@@ -13,7 +13,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.34</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -27,16 +26,29 @@
             <artifactId>jna</artifactId>
             <version>5.15.0</version>
         </dependency>
+
         <dependency>
             <groupId>net.java.dev.jna</groupId>
             <artifactId>jna-platform</artifactId>
             <version>5.15.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.godpalace.data</groupId>
+            <artifactId>GLDatabase</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.godpalace.gamegl</groupId>
+            <artifactId>GameGL</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

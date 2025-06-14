@@ -106,7 +106,18 @@ public class LeftClicker implements Clicker{
     }
 
     @Override
+    public boolean isStarted() {
+        return isStarted;
+    }
+
+
+    @Override
     public Mouse getMouse() {
         return mouse;
+    }
+
+    @Override
+    public void setDelay(int delay) {
+        robot.setAutoDelay(delay);
     }
 }
