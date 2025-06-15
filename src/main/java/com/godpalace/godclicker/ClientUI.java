@@ -12,7 +12,7 @@ public class ClientUI extends JFrame {
     public ClientUI() {
         setTitle("GodClicker v1.0");
         setBackground(Color.WHITE);
-        setSize(300, 300);
+        setSize(300, 250);
         setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - getWidth() / 2,
                 Toolkit.getDefaultToolkit().getScreenSize().height / 2 - getHeight() / 2);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

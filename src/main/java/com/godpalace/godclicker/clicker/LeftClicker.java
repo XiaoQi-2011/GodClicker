@@ -120,4 +120,9 @@ public class LeftClicker implements Clicker{
     public void setDelay(int delay) {
         robot.setAutoDelay(delay);
     }
+
+    @Override
+    public int getDelay() {
+        return robot.getAutoDelay();
+    }
 }

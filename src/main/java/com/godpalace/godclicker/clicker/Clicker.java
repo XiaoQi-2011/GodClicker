@@ -18,4 +18,5 @@ public interface Clicker {
     Mouse getMouse();
 
     void setDelay(int delay);
+    int getDelay();
 }

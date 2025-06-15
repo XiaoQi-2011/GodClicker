@@ -49,4 +49,18 @@ public class UiSetting {
             Main.painting.stopPainting();
         }
     }
+
+    public static void Save() {
+        PressTime = Main.leftClicker.getDelay();
+
+        LeftMaxCps = Main.leftClicker.getMaxCps();
+        LeftMinCps = Main.leftClicker.getMinCps();
+        LeftClickBind = Main.leftClicker.getBind();
+
+        RightMaxCps = Main.rightClicker.getMaxCps();
+        RightMinCps = Main.rightClicker.getMinCps();
+        RightClickBind = Main.rightClicker.getBind();
+
+        isPaintEnabled = Main.painting.isPainting();
+    }
 }

@@ -34,6 +34,16 @@ public class Main {
         painting.startPainting();
 
         UiSetting.Init();
+        new Thread(() -> {
+            while (true) {
+                try {
+                    Thread.sleep(100);
+                    UiSetting.Save();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }).start();
 
         clientUI = new ClientUI();
         clientUI.setVisible(true);
