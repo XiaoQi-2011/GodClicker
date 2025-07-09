@@ -29,7 +29,7 @@ public class ClickerPanel extends JPanel {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBackground(Color.WHITE);
-        setSize(150, 100);
+        setSize(150, 80);
 
         JLabel label = new JLabel(text);
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -37,9 +37,11 @@ public class ClickerPanel extends JPanel {
 
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
+        panel.setBackground(Color.WHITE);
         JLabel l1 = new JLabel("开启:");
         button = new JButton(isOn ? "On" : "Off");
         button.setForeground(isOn ? Color.GREEN : Color.RED);
+        button.setBackground(Color.WHITE);
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(button, BorderLayout.CENTER);
         panel.add(l1, BorderLayout.WEST);
@@ -47,6 +49,7 @@ public class ClickerPanel extends JPanel {
 
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
+        panel.setBackground(Color.WHITE);
         JLabel l3 = new JLabel("最大CPS:");
         JSpinner clickSpinner1 = new JSpinner(new SpinnerNumberModel(maxCps, 1, 1000, 1));
         clickSpinner1.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -56,6 +59,7 @@ public class ClickerPanel extends JPanel {
 
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
+        panel.setBackground(Color.WHITE);
         JLabel l4 = new JLabel("最小CPS:");
         JSpinner clickSpinner2 = new JSpinner(new SpinnerNumberModel(minCps, 1, 1000, 1));
         clickSpinner2.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -65,6 +69,7 @@ public class ClickerPanel extends JPanel {
 
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
+        panel.setBackground(Color.WHITE);
         JLabel l2 = new JLabel("绑定:");
         JTextField bindTextField = new JTextField();
         bindTextField.setText(bind);

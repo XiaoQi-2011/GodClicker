@@ -24,6 +24,10 @@ public class ClientUI extends JFrame {
         add(leftPanel, BorderLayout.WEST);
         add(rightPanel, BorderLayout.EAST);
 
+        JPanel centerPanel = new JPanel();
+        centerPanel.setBackground(Color.WHITE);
+        add(centerPanel, BorderLayout.CENTER);
+
         //MenuBar
         JMenuBar menuBar = new JMenuBar();
 
